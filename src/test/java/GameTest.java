@@ -1,5 +1,4 @@
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -36,7 +35,7 @@ class GameTest {
 
     @Test
     public void whenExceptionThrown_valid_case(){
-        Exception e = assertDoesNotThrow(()->{
+        assertDoesNotThrow(()->{
             Game game = new Game();
             game.validation("rock");
             game.validation("paper");
@@ -46,7 +45,7 @@ class GameTest {
     
     @Test
     public void whenExceptionThrown_invalid_case() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> {
+        assertThrows(IllegalArgumentException.class, () -> {
             Game game = new Game();
             game.validation("peko");
         });
