@@ -37,6 +37,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - uses: actions/checkout@v2
+      - name: Get gradle permission.
+        run: chmod +x gradlew
+        
       - name: Test with Gradle
         run: ./gradlew test
         
@@ -52,6 +56,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - uses: actions/checkout@v2
+      - name: Get gradle permission.
+        run: chmod +x gradlew
+        
       - name: Assemble with Gradle
         run: ./gradlew assemble
       
