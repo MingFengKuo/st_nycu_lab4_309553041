@@ -35,12 +35,19 @@ class GameTest {
     }
 
     @Test
+    public void whenExceptionThrown_valid_case(){
+        Exception e = assertDoesNotThrow(()->{
+            game.validation("rock");
+            game.validation("paper");
+            game.validation("scissors");
+        });
+    }
+    
+    @Test
     public void whenExceptionThrown_invalid_case() {
         Exception e = assertThrows(IllegalArgumentException.class, () -> {
             Game game = new Game();
             game.validation("peko");
         });
     }
-
-
 }
