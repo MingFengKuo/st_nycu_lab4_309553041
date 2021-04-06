@@ -37,6 +37,7 @@ class GameTest {
     @Test
     public void whenExceptionThrown_valid_case(){
         Exception e = assertDoesNotThrow(()->{
+            Game game = new Game();
             game.validation("rock");
             game.validation("paper");
             game.validation("scissors");
